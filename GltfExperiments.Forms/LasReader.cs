@@ -6,7 +6,7 @@ namespace GltfExperiments.Forms
 {
     class LasReader
     {
-        public static List<Vector4> Readlas(string lazfile)
+        public static List<Vector3> Readlas(string lazfile)
         {
             // int classification = 0;
             var lazReader = new laszip_dll();
@@ -15,11 +15,11 @@ namespace GltfExperiments.Forms
             var numberOfPoints = lazReader.header.number_of_point_records;
             var coordArray = new double[3];
 
-            var points = new List<Vector4>();
+            var points = new List<Vector3>();
             // Loop through number of points indicated
             for (int pointIndex = 0; pointIndex < numberOfPoints; pointIndex++)
             {
-                var point = new Vector4();
+                var point = new Vector3();
                 // Read the point
                 lazReader.laszip_read_point();
 
@@ -28,7 +28,7 @@ namespace GltfExperiments.Forms
                 point.X = (float)coordArray[0];
                 point.Y = (float)coordArray[1];
                 point.Z = (float)coordArray[2];
-                point.W = lazReader.point.classification;
+                // point.W = lazReader.point.classification;
 
                 points.Add(point);
                 // Get classification value

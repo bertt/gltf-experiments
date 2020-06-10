@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="utrecht.glb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="utrecht.laz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -13,15 +13,37 @@ namespace GltfExperiments.Forms
         public static void DoIt()
         {
             // todo: do something with laz file... 
-            var points = LasReader.Readlas("utrecht.laz");
-
-
             var material = new MaterialBuilder("material1").WithUnlitShader();
 
             var mesh = VERTEX.CreateCompatibleMesh("points");
 
             // create a point cloud primitive
             var pointCloud = mesh.UsePrimitive(material, 1);
+
+
+            var points = LasReader.Readlas("utrecht.laz");
+
+            foreach(var p in points)
+            {
+                pointCloud.AddPoint((p, new Vector4(0.4f, 0.8f, 0.7f, 1)));
+            }
+
+            // create a new gltf model
+            var model = ModelRoot.CreateModel();
+
+            // add all meshes (just one in this case) to the model
+            model.CreateMeshes(mesh);
+
+            // create a scene, a node, and assign the first mesh (the terrain)
+            model.UseScene("Default")
+                .CreateNode().WithMesh(model.LogicalMeshes[0]);
+
+            // save the model as GLB
+            model.SaveGLB("Galaxy.glb");
+
+            MessageBox.Show("Galaxy.glb is created");
+
+            /**
 
             var galaxy = new Galaxy();
 
@@ -59,7 +81,7 @@ namespace GltfExperiments.Forms
             model.SaveGLB("Galaxy.glb");
 
             MessageBox.Show("Galaxy.glb is created");
-
+            */
         }
 
     }
