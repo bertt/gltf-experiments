@@ -1,6 +1,7 @@
 ﻿using SharpGLTF.Geometry;
 using SharpGLTF.Materials;
 using System;
+using System.Drawing;
 using System.Numerics;
 using VERTEX = SharpGLTF.Geometry.VertexTypes.VertexPosition;
 
@@ -11,13 +12,19 @@ namespace GltfExperiments
     {
         static void Main(string[] args)
         {
+            var diffuseColor = "#E6009000";
+            var specularGlossines = "#4D0000ff";
             Console.WriteLine("Hello World!");
+
+            var colorDiffuse = ColorToVector4(ColorTranslator.FromHtml(diffuseColor));
+            var colorSpecular = ColorToVector4(ColorTranslator.FromHtml(specularGlossines)); 
 
             var material1 = new MaterialBuilder()
                 .WithDoubleSide(true)
+                .WithAlpha(AlphaMode.OPAQUE)
                 .WithSpecularGlossinessShader()
-                .WithChannelParam(KnownChannel.SpecularGlossiness, new Vector4(0.7f, 0, 0f, 1.0f))
-                .WithEmissive(new Vector3(0.2f, 0.3f, 0.1f));
+                .WithChannelParam(KnownChannel.SpecularGlossiness, colorSpecular)
+                .WithChannelParam(KnownChannel.Diffuse, colorDiffuse);
 
             var mesh = new MeshBuilder<VERTEX>("mesh");
 
@@ -30,5 +37,12 @@ namespace GltfExperiments
             var model = scene.ToGltf2();
             model.SaveGLTF("mesh.gtlf");
         }
+
+        private static Vector4 ColorToVector4(Color c)
+        {
+            var v = new Vector4((float)c.R / 255, (float)c.G / 255, (float)c.B / 255, (float)c.A / 255);
+            return v;
+        }
+
     }
 }

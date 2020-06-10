@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GltfExperiments", "GltfExperiments.csproj", "{E5EAFCC0-6C0F-4668-84A7-5051E3A992D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GltfExperiments.Forms", "..\GltfExperiments.Forms\GltfExperiments.Forms.csproj", "{9BDEEC9F-CA74-4081-B547-A88CC1CEC86F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8686E599-8BEA-41B8-AB8B-E48E2BB6F792}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5EAFCC0-6C0F-4668-84A7-5051E3A992D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5EAFCC0-6C0F-4668-84A7-5051E3A992D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5EAFCC0-6C0F-4668-84A7-5051E3A992D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5EAFCC0-6C0F-4668-84A7-5051E3A992D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDEEC9F-CA74-4081-B547-A88CC1CEC86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDEEC9F-CA74-4081-B547-A88CC1CEC86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDEEC9F-CA74-4081-B547-A88CC1CEC86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDEEC9F-CA74-4081-B547-A88CC1CEC86F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
