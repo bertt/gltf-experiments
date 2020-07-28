@@ -31,5 +31,10 @@ namespace GltfExperiments.Forms
         {
             SampleAnimation.DoIt();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SampleRotate.DoIt();
+        }
     }
 }
