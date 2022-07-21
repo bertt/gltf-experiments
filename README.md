@@ -6,10 +6,9 @@ Various glTF experiments
 
 - drawing pointclouds
 
+![image](https://user-images.githubusercontent.com/538812/180217176-bb4d10e7-8e34-4b10-97c7-cb48d5eb5ffa.png)
 
 - drawing animations
-
-
 
 ## Pointclouds
 
