@@ -36,5 +36,10 @@ namespace GltfExperiments.Forms
         {
             // SampleRotate.DoIt();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SampleGpuInstancing.DoIt();
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace GltfExperiments.Forms
             var scene = new SceneBuilder();
             scene.AddRigidMesh(mesh, Matrix4x4.Identity);
 
-            var model = scene.ToGltf2();
+            var model = scene.ToGltf2(SceneBuilderSchema2Settings.WithGpuInstancing);
             model.SaveGLTF("mesh.gtlf");
 
             MessageBox.Show($"model mesh.gltf is created");
