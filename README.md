@@ -3,8 +3,12 @@
 Various glTF experiments
 
 - using PbrSpecularGlossiness shader;
-- drawing pointclouds (todo)
-- drawing animations (todo)
+
+- drawing pointclouds
+
+
+- drawing animations
+
 
 
 ## Pointclouds

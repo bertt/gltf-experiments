@@ -1,4 +1,6 @@
-﻿using SharpGLTF.Geometry.Parametric;
+﻿
+
+using SharpGLTF.Geometry.Parametric;
 using SharpGLTF.Materials;
 using SharpGLTF.Scenes;
 using System.Numerics;

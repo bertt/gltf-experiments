@@ -34,7 +34,7 @@ namespace GltfExperiments.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SampleRotate.DoIt();
+            // SampleRotate.DoIt();
         }
     }
 }

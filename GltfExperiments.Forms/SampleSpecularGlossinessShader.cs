@@ -1,5 +1,6 @@
 ﻿using SharpGLTF.Geometry;
 using SharpGLTF.Materials;
+using SharpGLTF.Scenes;
 using System;
 using System.Drawing;
 using System.Numerics;
@@ -21,7 +22,7 @@ namespace GltfExperiments.Forms
 
             var material1 = new MaterialBuilder()
                 .WithDoubleSide(true)
-                .WithAlpha(SharpGLTF.Materials.AlphaMode.OPAQUE)
+                .WithAlpha(AlphaMode.OPAQUE)
                 .WithSpecularGlossinessShader()
                 .WithChannelParam(KnownChannel.SpecularGlossiness, colorSpecular)
                 .WithChannelParam(KnownChannel.Diffuse, colorDiffuse);
@@ -32,8 +33,10 @@ namespace GltfExperiments.Forms
             prim.AddTriangle(new VERTEX(-10, 0, 0), new VERTEX(10, 0, 0), new VERTEX(0, 10, 0));
             prim.AddTriangle(new VERTEX(10, 0, 0), new VERTEX(-10, 0, 0), new VERTEX(0, -10, 0));
 
-            var scene = new SharpGLTF.Scenes.SceneBuilder();
+
+            var scene = new SceneBuilder();
             scene.AddRigidMesh(mesh, Matrix4x4.Identity);
+
             var model = scene.ToGltf2();
             model.SaveGLTF("mesh.gtlf");
 
